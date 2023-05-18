@@ -1,30 +1,3 @@
-import pyttsx3
-import sys
-from tkinter import *
-from tkinter.ttk import *
-root = Tk()
-root.geometry("550x250")
-root.attributes('-fullscreen', True)
-
-
-response = pyttsx3.init()
-voices = response.getProperty('voices')
-response.setProperty('voice', voices[1].id)
-
-def getvals():
-    response.say('listening')
-    command = take_command()
-    response.runAndWait()
-
-Label(root, text="Ghost Assistant", font="ar 15 bold").pack(side= TOP, pady = 10)
-Label(root,text="am here to help...kindly initialize me").pack(side = BOTTOM, pady = 10)
-
-#submit data button
-Button(root,text="Initialize Ghost",command=root.destroy).pack(side=TOP)
-
-
-
-
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
@@ -90,6 +63,6 @@ def run_ghost():
 
 
 
-root.mainloop()
+
 while True:
     run_ghost()
